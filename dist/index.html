@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dappy signature and API tester</title>
+    <meta title="dappy:version" content="0.1" />  
+    <meta title="og:title" content="Dappy signature and API tester" />
+
+    <!-- libraries provided by Dappy browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.1/web3.min.js" integrity="sha512-vtUOC0YIaNm/UutU7yfnwqnF9LOYnXtpHe2kwi1nvJNloeGQuncNBiEKP/3Ww3D62USAhbXGsnYpAYoiDsa+wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css"></link>
+  </head>
+  <body style="padding:2rem">
+    <h3 class="title is-3">Dappy signature tester Ethereum / EVM</h3>
+    <button id="connect">connect</button>
+    <button class="eth_sendTransaction" confirm="true">eth_sendTransaction (confirm)</button>
+    <button class="eth_sendTransaction" confirm="false">eth_sendTransaction (reject)</button>
+    <button class="eth_sendTransaction" invalid="true">eth_sendTransaction (invalid)</button>
+    <button id="personal_sign">personal_sign</button>
+    <button id="signTypedData_v4">signTypedData_v4</button>
+  </body>
+</html>

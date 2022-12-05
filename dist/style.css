@@ -1,0 +1,118 @@
+/* Genesis form and page text */
+
+.body-error-1 {
+  color: #b22;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.page-text-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.page-text-cont .tip {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+.page-text-cont .tip > * {
+  margin: 0px;
+  margin-right: 10px;
+}
+.page-text-cont .tip input {
+  width: 100px;
+}
+.page-text {
+  white-space: break-spaces;
+}
+.genesis-form,
+.page-text {
+  width: 95%;
+  min-height: 95%;
+}
+
+.genesis-form > p,
+.genesis-form > .field {
+  max-width: 1200px;
+}
+
+.has-text-danger {
+  text-align: center;
+}
+
+.note {
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.bottom-buttons {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+/* GLOBAL */
+
+.modal {
+  display: block;
+}
+.modal-card {
+  margin-top: 100px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: #fafafa;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 15px;
+}
+
+.button.is-light {
+  background: linear-gradient(45deg, #dedede, #efefef);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #555;
+  margin-right: 2rem;
+}
+.button.is-medium {
+  font-size: 1.2rem;
+  padding: 1.5rem 1.5rem;
+}
+.button.tip {
+  background: linear-gradient(45deg, #53b998, #3bdfc1);
+  color: #222;
+  border: 1px solid #245840;
+}
+
+input,
+textarea {
+  padding: 1.4rem 1.2rem !important;
+}
+
+/* HOME */
+.home {
+  width: 95%;
+  min-height: 95%;
+}

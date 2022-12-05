@@ -1,0 +1,18 @@
+{
+  "name": "dapp-dappy-x",
+  "version": "1.0.0",
+  "description": "Test of signatures and dappy browser API",
+  "main": "index.html",
+  "scripts": {
+    "dappy:push": "node ./node_modules/dappy-cli/lib/ push"
+  },
+  "author": "FABCO",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.2"
+  },
+  "dependencies": {
+    "dappy-cli": "16.0.0",
+    "rchain-token": "fabcotech/rchain-token#16.0.0"
+  }
+}
