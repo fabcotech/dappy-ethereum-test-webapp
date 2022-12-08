@@ -1,31 +1,55 @@
-window.ethereumm = {
-  isMetaMask: false,
-};
-
 // pk 58902cc139c57fa5a852dd214ff97104029128b04edde448107f0404476a2d83
 // eth address 0x900c7Dd5CE1c2771976AC58a8B2b53e9745bA8A8
 
 document.addEventListener('DOMContentLoaded', function () {
   //const web3 = new Web3();
+  setTimeout(() => {
+    window.ethereum.on('connect', (connectInfo) => {
+      console.log('on connect');
+      console.log('ethereum.isConnected()', window.ethereum.isConnected());
+      console.log(connectInfo);
+    });
+    window.ethereum.on('disconnect', (error) => {
+      console.log('on disconnect');
+      console.log('ethereum.isConnected()', window.ethereum.isConnected());
+      console.log(error);
+    });
+    window.ethereum.on('accountsChanged', (accounts) => {
+      console.log('on accountsChanged');
+      console.log(accounts);
+    });
+    window.ethereum.on('chainChanged', (chainId) => {
+      console.log('on chainChanged');
+      console.log(chainId);
+    });
+  }, 500);
   let account = '';
-  document.getElementById('connect').addEventListener('click', (e) => {
+  document
+    .getElementById('eth_requestAccounts')
+    .addEventListener('click', (e) => {
+      e.preventDefault();
+      window.ethereum
+        .request({ method: 'eth_requestAccounts' })
+        .then((accounts, b) => {
+          if (!Array.isArray(accounts) || accounts.length !== 1) {
+            console.error('[connect] not array of length 1');
+            return;
+          }
+          if (accounts[0] !== '0x900c7dd5ce1c2771976ac58a8b2b53e9745ba8a8') {
+            console.error(
+              "[connect] accounts[0] !== '0x900c7dd5ce1c2771976ac58a8b2b53e9745ba8a8'"
+            );
+            return;
+          }
+          account = accounts[0];
+          console.log('[connect] ✓ connected !');
+        });
+    });
+  document.getElementById('eth_chainId').addEventListener('click', (e) => {
     e.preventDefault();
-    window.ethereum
-      .request({ method: 'eth_requestAccounts' })
-      .then((accounts, b) => {
-        if (!Array.isArray(accounts) || accounts.length !== 1) {
-          console.error('[connect] not array of length 1');
-          return;
-        }
-        if (accounts[0] !== '0x900c7dd5ce1c2771976ac58a8b2b53e9745ba8a8') {
-          console.error(
-            "[connect] accounts[0] !== '0x900c7dd5ce1c2771976ac58a8b2b53e9745ba8a8'"
-          );
-          return;
-        }
-        account = accounts[0];
-        console.log('[connect] ✓ connected !');
-      });
+    window.ethereum.request({ method: 'eth_chainId' }).then((chainId) => {
+      console.log('[eth_chainId] ✓', chainId);
+    });
   });
   const eth_sendTransaction = document.getElementsByClassName(
     'eth_sendTransaction'
