@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gasLimit: '0x33303030',
         gasPrice: '0x32303030',
         value: '0x33303030303030',
-        chainId: 137,
+        chainId: '0x89',
       };
       if (confirm === 'true') {
         window.ethereum
